@@ -10,6 +10,8 @@ module.exports = {
       "@servers": resolve("src/servers"),
       "@router": resolve("src/router"),
       "@pages": resolve("src/pages"),
+      "@common": resolve("src/common"),
+      "@components": resolve("src/components"),
 
     }
   }

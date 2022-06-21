@@ -1,3 +1,4 @@
+import HomePage from "@/pages/homePage";
 import { useRoutes } from "react-router-dom";
 
 
@@ -28,7 +29,7 @@ export default function Router() {
     {
       path: "/",
       // exact: true,
-      element: <div style={{ color: "red" }}>首页</div>,
+      element: <HomePage />,
     },
     {
       path: "/discover",

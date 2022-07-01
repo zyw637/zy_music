@@ -23,7 +23,7 @@ export default memo(function TopBanner() {
   }, [dispatch])
 
   const bannerRef = useRef()
-  
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const bannerChange = useCallback((from, to) => {
     setCurrentIndex(to)
@@ -32,7 +32,7 @@ export default memo(function TopBanner() {
   const bgImage = _.get(topBanner, `${currentIndex}.imageUrl`) + "?imageView&blur=40x20"
 
   return (
-    <TopBannerWrapper bgImage={bgImage} className="wrap-v1">
+    <TopBannerWrapper bgImage={bgImage} >
       <div className="banner wrap-v2">
         <Banner>
           <Carousel effect="fade" autoplay ref={bannerRef} beforeChange={bannerChange}>

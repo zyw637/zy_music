@@ -3,8 +3,7 @@ import _ from 'lodash';
 
 import { 
   getBanner,
-  getHotSongList,
-  getTopList
+  getPlayList,
 } from "@/servers/homePage";
 
 // import { getHotArtists } from "../../../servers/artist";
@@ -13,6 +12,11 @@ import {
 const changeBannerAction = topBanner =>({
   type:actionTypes.GET_BANNER,
   topBanner
+});
+
+const changePlanListAction = playLists =>({
+  type:actionTypes.GET_PLAY_LIST,
+  playLists
 });
 
 // const changeHotSongListAction = hotSongList =>({
@@ -41,6 +45,15 @@ export const getBannerAction = () =>{
       dispatch(changeBannerAction(_.get(res, "banners", [])))
       })
     }
+}
+
+export const getPlayListAction = (limit = 10) =>{
+  return  dispatch => { 
+    getPlayList(limit).then(res=>{
+      dispatch(changePlanListAction(_.get(res, "playlists", [])))
+    })
+
+  }
 }
 
 // export const getHotSongListAction = (limit = 8) =>{

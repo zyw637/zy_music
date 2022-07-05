@@ -18,7 +18,6 @@ export default memo(function PlayList() {
     dispatch(getPlayListAction(10))
   }, [dispatch])
 
-  console.log(playLists)
   return (
     <PlanListWrapper>
       {rowOfList(playLists.slice(0, 5))}
@@ -30,8 +29,8 @@ export default memo(function PlayList() {
 
 const rowOfList = (list = []) => {
   return <RowStyle>
-    {list.map(item => {
-      return <PlayListCover />
+    {list.map((item) => {
+      return <PlayListCover key={item.id} imgUrl={item.coverImgUrl} name={item.name} />
     })}
   </RowStyle>
 }

@@ -40,6 +40,10 @@ h2 {
   color: #fff;
 }
 
+.font-style {
+  font-family: "Microsoft Yahei", "Times New Roman", Times, serif;
+}
+
 
 /* .sprite_01 {
   background: url(../img/sprite_01.png) no-repeat 0 9999px;

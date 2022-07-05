@@ -6,7 +6,7 @@ export default memo(function MySection(props) {
 
   const { title, subTitle, children, more: { moreText, url } } = props;
 
-  return (<div style={{ marginTop: "20px"}}>
+  return (<div style={{ marginTop: "20px" }}>
     <SectionWrapper className="wrap-v1" >
       <div className='left'>
         <h3 className="title">{title}</h3>

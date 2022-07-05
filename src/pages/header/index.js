@@ -31,22 +31,24 @@ export default memo(function Header() {
 
 
 const CLanguage = memo(() => {
-  const menu = (
-    <Menu>
-      <Menu.Item>
-        <p onClick={() => {
-          sessionStorage.setItem("language", "CN")
-          window.location.reload()
-        }}>{Language.cn("中文").en("Chinese").getMessage()}</p>
-      </Menu.Item>
-      <Menu.Item>
-        <p onClick={() => {
-          sessionStorage.setItem("language", "EN")
-          window.location.reload()
-        }} >{Language.cn("英文").en("English").getMessage()}</p>
-      </Menu.Item>
-    </Menu>
-  );
+
+  const items = [
+    {
+      label: <p onClick={() => {
+        sessionStorage.setItem("language", "CN")
+        window.location.reload()
+      }}>{Language.cn("中文").en("Chinese").getMessage()}</p>,
+      key: "cn"
+    },
+    {
+      label: <p onClick={() => {
+        sessionStorage.setItem("language", "EN")
+        window.location.reload()
+      }} >{Language.cn("英文").en("English").getMessage()}</p>,
+      key: "en"
+    }
+  ]
+  const menu = <Menu items={items} />
 
   return <Dropdown overlay={menu}>
     <div style={{ width: "80px" }}>

@@ -4,9 +4,10 @@ import { useRoutes } from "react-router-dom";
 import { discoverChildren } from "./discover"
 
 export default function Router() {
-  console.log(discoverChildren)
 
   const routes = useRoutes([
+    ...discoverChildren,
+
     {
       path: "/",
       exact: true,
@@ -15,7 +16,7 @@ export default function Router() {
     {
       path: "/discover",
       exact: true,
-      children: discoverChildren,
+      element: <>发现</>,
     },
     {
       path: "/library",

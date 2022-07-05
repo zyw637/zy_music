@@ -1,20 +1,23 @@
-import MyNavlink from '@/components/routers/MyNavlink';
 import React, { memo } from 'react';
+import { Link } from 'react-router-dom';
+import { PlayCircleOutlined } from "@ant-design/icons";
+import { getSizeImage } from '@utils'
 
 import { CoverWrapper } from './style'
 
 export default memo(function PlayListCover(props) {
-  const { imgUrl } = props
+  const { imgUrl, name } = props
   return (
     <CoverWrapper>
-      <div className='img'>
-        <MyNavlink to="/discover/playlist/:playlist">
-          <img src={imgUrl} alt="" />
-        </MyNavlink>
-      </div>
-      <div className='text'>
-
-      </div>
+      <Link to="/discover/playlist/:playlist" id="RouterNavLink" >
+        <div className='img'>
+          <button className="player" > <PlayCircleOutlined style={{ fontSize: "60px" }} /></button>
+          <img src={getSizeImage(imgUrl, 200)} alt="" />
+        </div>
+        <div className='text'>
+          <p className='font-style' href="/#">{name}</p>
+        </div>
+      </Link>
     </CoverWrapper>
   )
 })
